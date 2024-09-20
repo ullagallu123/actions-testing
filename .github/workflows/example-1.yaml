@@ -6,7 +6,7 @@ jobs:
 
         steps:
         - name: Welcome message
-          run: echo "Welcome to Github Actions"
+          run: echo "Welcome to Github Actions" > README.md
         - name: List the files
           run: ls
         - name: read the file
