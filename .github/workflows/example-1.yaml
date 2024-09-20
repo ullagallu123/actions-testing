@@ -7,7 +7,7 @@ jobs:
         steps:
 
         - name: Welcome message
-          run: echo "Welcome to Github Actions" > welcome
+          run: echo "Welcome to Github Actions"
 
         - name: Checkout the Repo
           uses: actions/checkout@v4 
@@ -18,5 +18,4 @@ jobs:
         - name: read the file
           run:  cat README.md
 
-        - name: read the file
-          run:  cat welcome
+       
