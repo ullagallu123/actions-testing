@@ -8,17 +8,25 @@ jobs:
 
         - name: Welcome message
           run: echo "Welcome to Github Actions" > hello.txt
+        
+        - name: pwd
+          run: pwd
+
+        - name: read the message file
+          run: cat hello.txt
 
         - name: Checkout the Repo
           uses: actions/checkout@v4 
 
         - name: List the files
           run: ls -a
+          
+        - name: pwd
+          run: pwd
 
         - name: read the file
           run:  cat README.md
 
-        - name: read the message file
-          run: cat hello.txt
+      
 
        
