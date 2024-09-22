@@ -15,6 +15,11 @@ jobs:
         - name: read the message file
           run: cat hello.txt
 
+        - uses: actions/upload-artifact@v4
+          with:
+            name: my-artifact
+            path: /home/runner/work/actions-testing/actions-testing/hello.txt
+
         - name: Checkout the Repo
           uses: actions/checkout@v4 
 
@@ -26,9 +31,24 @@ jobs:
 
         - name: read the file
           run:  cat README.md
+
+
         
-        - name: read the message file
-          run: cat hello.txt
+    second_job:
+      runs_on: ubuntu-latest
+      
+      needs: first_job
+      
+      steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
+
+      - name: Display structure of downloaded files
+        run: ls -R
+
+      - name: read the message file
+        run: cat hello.txt
         
 
       
