@@ -20,12 +20,16 @@ jobs:
 
         - name: List the files
           run: ls -a
-          
+
         - name: pwd
           run: pwd
 
         - name: read the file
           run:  cat README.md
+        
+        - name: read the message file
+          run: cat hello.txt
+        
 
       
 
